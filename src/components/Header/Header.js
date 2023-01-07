@@ -12,7 +12,6 @@ import {
   ShoppingBaig,
 } from "../../assets/icons";
 import CustomLinkTo from '../CustomLinkTo'
-
 import { Drawer } from "@mui/material";
 import Menu from "../../screens/Menu";
 import AddtoCart from "../Cart/AddtoCart";
@@ -25,6 +24,7 @@ const Header = () => {
   };
 const [open, setOpen]=useState(false);
 const [cartopen, setCartOpen]=useState(false);
+console.log(CustomLinkTo)
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={{ bgcolor: "background.default" }} position="static">
