@@ -1,11 +1,11 @@
 import { Button } from '@mui/material'
 import React from 'react'
 
-const CustomButton = ({sx,onClick, startIcon, endIcon, variant, label, color, onChange }) => {
+const CustomButton = ({sx,elevation,onClick, startIcon, endIcon, variant, label, color, onChange }) => {
   return (
     <>
     <Button 
-    
+    elevation={elevation}
     onChange={onChange}
     sx={sx}
     variant={variant}
