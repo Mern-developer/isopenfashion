@@ -14,7 +14,10 @@ import {
 import CustomLinkTo from '../CustomLinkTo'
 import { Drawer } from "@mui/material";
 import Menu from "../../screens/Menu";
-import AddtoCart from "../Cart/AddtoCart";
+import AddtoCart from "../Cart/ShoppingCart";
+import Checkout from "../../screens/Checkout";
+import ShoppingCart from "../Cart/ShoppingCart";
+import Addtocart from "../Cart/Addtocart";
 
 const Header = () => {
   const menuStyle = {
@@ -24,8 +27,9 @@ const Header = () => {
   };
 const [open, setOpen]=useState(false);
 const [cartopen, setCartOpen]=useState(false);
-console.log(CustomLinkTo)
-  return (
+
+
+return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={{ bgcolor: "background.default" }} position="static">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -60,12 +64,16 @@ console.log(CustomLinkTo)
               Blog
             </Button>
             </CustomLinkTo>
+            <CustomLinkTo to="/aboutus">  
             <Button variant="text" color="success" sx={menuStyle}>
               About Us
             </Button>
+            </CustomLinkTo>
+            <CustomLinkTo to="/contactus">  
             <Button variant="text" color="success" sx={menuStyle}>
               Contact us
             </Button>
+            </CustomLinkTo>
           </Box>
           <Box style={{display: 'flex', cursor: 'pointer'}}>
             <SearchIcon />
@@ -76,8 +84,6 @@ console.log(CustomLinkTo)
           </Box>
         </Toolbar>
       </AppBar>
-
-      
       <Drawer  anchor='left'
     open={open} 
       onClose={()=>setOpen(false)}
@@ -85,14 +91,11 @@ console.log(CustomLinkTo)
       <Box p={2} width='300px'
       role="presentation"
       >
-     
       <Menu  setOpen={setOpen} />
-
-
       </Box>      
       </Drawer>
-      <AddtoCart open={cartopen} onClose={()=>setCartOpen(false)} />
-
+      <Addtocart cartopen={cartopen} setCartOpen={setCartOpen}/>
+  
       </Box>
   );
 };
