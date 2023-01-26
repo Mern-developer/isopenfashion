@@ -5,10 +5,12 @@ import { ShoppingBaig } from "../../assets/icons";
 import Checkout from "../../screens/Checkout";
 import CustomButton from "../CusButton/CustomButton";
 import CustomLinkTo from "../CustomLinkTo";
+import AddShippingAddress from "./AddShippingAddress";
 
 const Addtocart = ({cartopen, setCartOpen }) => {
  const [checkoutc, setCheckoutc]=useState(false);
-  const [empty] = useState(false);
+ const [addShopAddre, setaddShopAddre] = useState(false);
+ const [empty] = useState(false);
 
     return (
       <>
@@ -152,8 +154,9 @@ const Addtocart = ({cartopen, setCartOpen }) => {
         )}
       </Box>
     </Box>
-  </Drawer>
-  <Checkout checkoutc={checkoutc} setCheckoutc={setCheckoutc}  setCartOpen={setCartOpen}/>
+  </Drawer>   
+  <Checkout checkoutc={checkoutc} setCheckoutc={setCheckoutc}  setCartOpen={setCartOpen} setaddShopAddre={setaddShopAddre}/>
+  <AddShippingAddress  openaddShopAddre={addShopAddre} setaddShopAddre={setaddShopAddre}  setCheckoutc={setCheckoutc} />
   </>
   )
 }
